@@ -1,5 +1,4 @@
-﻿using BrainMaker.Network;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PatternAssociator
+namespace PatternAssociator.Pages
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for ReproducePattern.xaml
     /// </summary>
-    public partial class MainWindow : NavigationWindow
+    public partial class ReproducePattern : Page
     {
-        public MainWindow()
+        public ReproducePattern()
         {
             InitializeComponent();
         }
