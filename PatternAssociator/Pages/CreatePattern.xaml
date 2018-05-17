@@ -3,7 +3,8 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:PatternAssociator.Pages"
+      xmlns:local="clr-namespace:PatternAssociator.UserControls"
+      xmlns:uc="PatternAssociator"
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
       Title="CreatePattern"
@@ -11,5 +12,6 @@
 
     <StackPanel>
         <Label HorizontalAlignment="Center" FontSize="18pt">Train Pattern</Label>
+        <local:PatternGrid Height="250" Width="250"></local:PatternGrid>
     </StackPanel>
 </Page>

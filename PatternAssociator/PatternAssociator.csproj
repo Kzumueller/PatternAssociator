@@ -61,7 +61,6 @@
     <Compile Include="UserControls\PatternGrid.xaml.cs">
       <DependentUpon>PatternGrid.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\Pattern.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
