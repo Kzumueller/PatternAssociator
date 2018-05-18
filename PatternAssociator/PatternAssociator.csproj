@@ -58,6 +58,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AutoAssociatorSimple\AutoAssociator.cs" />
+    <Compile Include="Transformer\PatternTransformer.cs" />
     <Compile Include="UserControls\PatternGrid.xaml.cs">
       <DependentUpon>PatternGrid.xaml</DependentUpon>
     </Compile>

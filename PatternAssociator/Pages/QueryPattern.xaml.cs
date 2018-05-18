@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AutoAssociatorSimple;
+using PatternAssociator.Transformer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +22,42 @@ namespace PatternAssociator.Pages
     /// </summary>
     public partial class QueryPattern : Page
     {
+        public AutoAssociator Associator { get; set; }
+
         public QueryPattern()
         {
             InitializeComponent();
+
+            QueryButton.Click += QueryButton_Click;
+            ToTrainingButton.Click += ToTrainingButton_Click;
+        }
+
+        public QueryPattern(AutoAssociator associator) : this()
+        {
+            Associator = associator;
+        }
+
+        // transforms the current pattern into a binary vector, 
+        // lets Associator reproduce a pattern and navigates to a result page where the memorized pattern is visualized
+        private void QueryButton_Click(object sender, RoutedEventArgs e)
+        {
+            var result = Associator.Reproduce(PatternGrid.Pattern.Children.ToBinaryVector());
+
+            var resultPage = new ReproducePattern(result);
+            resultPage.KeepAlive = false;
+
+            NavigationService.GetNavigationService(this).Navigate(resultPage);
+        }
+
+        //navigates back to the training page
+        private void ToTrainingButton_Click(object sender, RoutedEventArgs e)
+        {
+            var service = NavigationService.GetNavigationService(this);
+
+            if (service.CanGoBack)
+            {
+                service.GoBack();
+            }
         }
     }
 }
